@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОСпорт</title>
+    <link rel="icon" href="media/favicon.png">
+
+    <!-- Сторонние стили и скрипты -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
+    <script src="https://cdn.plyr.io/3.6.3/plyr.js" defer></script>
+
+    <!-- Локальные стили и скрипты -->
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <a href="#about" class="header-logo-link">
+            <div class="header-logo-block">
+                <img src="media/osport-logo.png" alt="OSport Logo"
+                    class="header-logo-image" loading="lazy"
+                >
+            </div>
+        </a>
+        <i class="bx bx-menu" id="header-menu-icon"></i>
+        <nav class="header-navbar">
+            <a href="#about" class="active">О проекте</a>
+            <a href="#clients">Наши клиенты</a>
+            <a href="#technology">Технология</a>
+            <a href="#competitions">Соревнования</a>
+            <a href="#products">Продукты</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+    <main class="content">
+        <!-- Секция О проекте -->
+        <section class="about" id="about">
+            <div class="about-description">
+                <h3>– ОСПОРТ</h3>
+                <h1>
+                    ПЕРВЫЙ В РОССИИ ПРОЕКТ,<br>
+                    ОБЪЕДИНЯЮЩИЙ<br>
+                    <span class="blue-text">СПОРТ И ТЕХНОЛОГИИ</span>
+                </h1>
+                <div class="about-results">
+                    <div class="about-results-item">
+                        <div>
+                            <span class="blue-text">300+</span><br>
+                            <p>участников</p>
+                        </div>
+                    </div>
+                    <div class="about-results-item">
+                        <div>
+                            <span  class="blue-text">35+</span><br>
+                            <p>соревнований</p>
+                        </div>
+                    </div>
+                    <div class="about-results-item">
+                        <div>
+                            <span  class="blue-text">12</span><br>
+                            <p>партнёров</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="about-text">
+                    Повышаем мотивацию к занятиям спортом
+                    в комфортной и увлекательной соревновательной
+                    атмосфере, помогая компаниям снизить затраты,
+                    связанные с плохим здоровьем сотрудников.
+                </p>
+            </div>
+            <img src="media/phones.png" class="about-phones" alt="Phones">
+            <!-- <div class="about-image">
+                <div class="about-phone">
+                    <img src="media/bot-osport-full.gif" class="about-bot" alt="OSport Bot">
+                </div>
+            </div> -->
+        </section>
+        
+        <!-- Секция Наши клиенты -->
+        <section class="clients vertical-centering" id="clients">
+            <h1 class="title-fw600">
+                МЫ ОРГАНИЗУЕМ СПОРТИВНЫЕ <br>
+                <span class="blue-text">ОНЛАЙН-СОРЕВНОВАНИЯ</span> ДЛЯ
+            </h1>
+            <div class="cards-block">
+                <div class="clients-card" id="student">
+                    <div class="clients-card-inner">
+                        <div class="card clients-card-front">
+                            <img src="media/svg/student.svg" alt="student icon">
+                            <p class="title-fw600">
+                                ШКОЛЬНИКОВ <br>
+                                И СТУДЕНТОВ
+                            </p>
+                        </div>
+                        <div class="card clients-card-back">
+                            <img src="media/svg/student.svg" alt="student icon">
+                            <p>
+                                Наш вклад в формирование здорового поколения. Спорт формирует дисциплину, уверенность в себе и волевые качества, необходимые для достижения поставленных целей.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clients-card" id="employee">
+                    <div class="clients-card-inner">
+                        <div class="card clients-card-front">
+                            <img src="media/svg/briefcase.svg" alt="briefcase icon">
+                            <p class="title-fw600">
+                                СОТРУДНИКОВ <br>
+                                КОМПАНИЙ
+                            </p>
+                        </div>
+                        <div class="card clients-card-back">
+                            <img src="media/svg/briefcase.svg" alt="briefcase icon">
+                            <p>
+                                Грамотные инвестиции в команду — это не разовые расходы, а стратегический капитал, который приносит дивиденды на протяжении многих лет. Забота о здоровье сотрудников закладывает фундамент для устойчивого роста бизнеса.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clients-card" id="sportsman">
+                    <div class="clients-card-inner">
+                        <div class="card clients-card-front">
+                            <img src="media/svg/sportsman.svg" alt="sportsman icon">
+                            <p class="title-fw600">
+                                ВСЕХ, КОМУ <br>
+                                ИНТЕРЕСЕН <br>
+                                СПОРТ
+                            </p>
+                        </div>
+                        <div class="card clients-card-back">
+                            <img src="media/svg/sportsman.svg" alt="sportsman icon">
+                            <p>
+                                Нравится заниматься спортом? Присоединяйтесь к нашим соревнованиям и соревнуйстесь с такими же энтузиастами. Не важно, новичок вы или опытный спортсмен — здесь каждый найдёт вызов по силам и возможность показать свои результаты.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Секция Технология -->
+        <section class="technology vertical-centering" id="technology">
+            <h1>
+                <span class="blue-text">
+                    НАША ТЕХНОЛОГИЯ
+                </span>
+                <span class="title-fw600">
+                    за 20 секунд
+                </span>
+            </h1>
+            <img src="media/svg/eyes.svg" 
+                class="technology-eyes" 
+                alt="eyes icon"
+            >
+            <video id="plyr" playsinline controls>
+                <source src="media/technology.mp4" type="video/mp4" />
+            </video>
+        </section>
+        
+        <!-- Секция Соревнования -->
+        <section class="competitions vertical-centering" id="competitions">
+            <div class="display-inline">
+                <img 
+                    src="media/svg/trophy-cup.svg" 
+                    width="80" height="80"
+                    alt="trophy cup"
+                >
+                <h1 class="title-fw600">
+                    <span class="blue-text">УЧАСТВУЙ И ПОБЕЖДАЙ</span>
+                    В НАШИХ СОРЕВНОВАНИЯХ
+                </h1>
+            </div>
+            <div class="cards-block competitions-cards-block">
+                <div class="competitions-card" id="pull-up">
+                    <div class="competitions-card-inner">
+                        <div class="card competitions-card-front">
+                            <img 
+                                src="media/svg/pull-up-blue.svg" 
+                                width="70" height="70"
+                                alt="pull-up"
+                            >
+                            <h3 class="title-fw600">Подтягивания</h3>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/people.svg" 
+                                        width="40" height="40"
+                                        class="competitions-people"
+                                        alt="people"
+                                    >
+                                    <h5>58</h5>
+                                </div>
+                                <p>участников</p>
+                            </div>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/trophy.svg" 
+                                        width="27" height="27"
+                                        class="competitions-trophy"
+                                        alt="trophy"
+                                    >
+                                    <h5>32</h5>
+                                </div>
+                                <p>лучший результат</p>
+                            </div>
+                            <div class="competitions-timer">
+                                Конец через 3 дн. 7ч.
+                            </div>
+                        </div>
+                        <div class="card competitions-card-back">
+                            <img 
+                                src="media/svg/pull-up-light.svg" 
+                                width="100" height="100"
+                                alt="pull-up"
+                            >
+                            <a href="#">
+                                <div class="competitions-card-link">
+                                    <h2>Принять участие</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="competitions-card" id="push-up">
+                    <div class="competitions-card-inner">
+                        <div class="card competitions-card-front">
+                            <img 
+                                src="media/svg/push-up-blue.svg" 
+                                width="70" height="70"
+                                alt="push-up"
+                            >
+                            <h3 class="title-fw600">Отжимания</h3>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/people.svg" 
+                                        width="40" height="40"
+                                        class="competitions-people"
+                                        alt="people"
+                                    >
+                                    <h5>35</h5>
+                                </div>
+                                <p>участников</p>
+                            </div>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/trophy.svg" 
+                                        width="27" height="27"
+                                        class="competitions-trophy"
+                                        alt="trophy"
+                                    >
+                                    <h5>57</h5>
+                                </div>
+                                <p>лучший результат</p>
+                            </div>
+                            <div class="competitions-timer">
+                                Конец через 7 дн. 7ч.
+                            </div>
+                        </div>
+                        <div class="card competitions-card-back">
+                            <img 
+                                src="media/svg/push-up-light.svg" 
+                                width="100" height="100"
+                                alt="push-up"
+                            >
+                            <a href="#">
+                                <div class="competitions-card-link">
+                                    <h2>Принять участие</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card competitions-card-back">
+                        <img 
+                            src="media/svg/push-up-light.svg" 
+                            width="100" height="100"
+                            alt="push-up"
+                        >
+                        <a href="#">
+                            <div class="competitions-card-link">
+                                <h2>Принять участие</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="competitions-card" id="squats">
+                    <div class="competitions-card-inner">
+                        <div class="card competitions-card-front">
+                            <img 
+                                src="media/svg/squats-blue.svg" 
+                                width="70" height="70"
+                                alt="squats"
+                            >
+                            <h3 class="title-fw600">Приседания</h3>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/people.svg" 
+                                        width="40" height="40"
+                                        class="competitions-people"
+                                        alt="people"
+                                    >
+                                    <h5>22</h5>
+                                </div>
+                                <p>участников</p>
+                            </div>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/trophy.svg" 
+                                        width="27" height="27"
+                                        class="competitions-trophy"
+                                        alt="trophy"
+                                    >
+                                    <h5>102</h5>
+                                </div>
+                                <p>лучший результат</p>
+                            </div>
+                            <div class="competitions-timer">
+                                Конец через 12 дн. 7ч.
+                            </div>
+                        </div>
+                        <div class="card competitions-card-back">
+                            <img 
+                                src="media/svg/squats-light.svg" 
+                                width="100" height="100"
+                                alt="squats"
+                            >
+                            <a href="#">
+                                <div class="competitions-card-link">
+                                    <h2>Принять участие</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="competitions-card" id="pull-up2">
+                    <div class="competitions-card-inner">
+                        <div class="card competitions-card-front">
+                            <img 
+                                src="media/svg/pull-up-blue.svg" 
+                                width="70" height="70"
+                                alt="pull-up"
+                            >
+                            <h3 class="title-fw600">Подтягивания</h3>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/people.svg" 
+                                        width="40" height="40"
+                                        class="competitions-people"
+                                        alt="people"
+                                    >
+                                    <h5>58</h5>
+                                </div>
+                                <p>участников</p>
+                            </div>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/trophy.svg" 
+                                        width="27" height="27"
+                                        class="competitions-trophy"
+                                        alt="trophy"
+                                    >
+                                    <h5>32</h5>
+                                </div>
+                                <p>лучший результат</p>
+                            </div>
+                            <div class="competitions-timer">
+                                Конец через 3 дн. 7ч.
+                            </div>
+                        </div>
+                        <div class="card competitions-card-back">
+                            <img 
+                                src="media/svg/pull-up-light.svg" 
+                                width="100" height="100"
+                                alt="pull-up"
+                            >
+                            <a href="#">
+                                <div class="competitions-card-link">
+                                    <h2>Принять участие</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="competitions-card" id="push-up2">
+                    <div class="competitions-card-inner">
+                        <div class="card competitions-card-front">
+                            <img 
+                                src="media/svg/push-up-blue.svg" 
+                                width="70" height="70"
+                                alt="push-up"
+                            >
+                            <h3 class="title-fw600">Отжимания</h3>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/people.svg" 
+                                        width="40" height="40"
+                                        class="competitions-people"
+                                        alt="people"
+                                    >
+                                    <h5>35</h5>
+                                </div>
+                                <p>участников</p>
+                            </div>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/trophy.svg" 
+                                        width="27" height="27"
+                                        class="competitions-trophy"
+                                        alt="trophy"
+                                    >
+                                    <h5>57</h5>
+                                </div>
+                                <p>лучший результат</p>
+                            </div>
+                            <div class="competitions-timer">
+                                Конец через 7 дн. 7ч.
+                            </div>
+                        </div>
+                        <div class="card competitions-card-back">
+                            <img 
+                                src="media/svg/push-up-light.svg" 
+                                width="100" height="100"
+                                alt="push-up"
+                            >
+                            <a href="#">
+                                <div class="competitions-card-link">
+                                    <h2>Принять участие</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card competitions-card-back">
+                        <img 
+                            src="media/svg/push-up-light.svg" 
+                            width="100" height="100"
+                            alt="push-up"
+                        >
+                        <a href="#">
+                            <div class="competitions-card-link">
+                                <h2>Принять участие</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="competitions-card" id="squats2">
+                    <div class="competitions-card-inner">
+                        <div class="card competitions-card-front">
+                            <img 
+                                src="media/svg/squats-blue.svg" 
+                                width="70" height="70"
+                                alt="squats"
+                            >
+                            <h3 class="title-fw600">Приседания</h3>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/people.svg" 
+                                        width="40" height="40"
+                                        class="competitions-people"
+                                        alt="people"
+                                    >
+                                    <h5>22</h5>
+                                </div>
+                                <p>участников</p>
+                            </div>
+                            <div class="display-column">
+                                <div class="display-inline">
+                                    <img 
+                                        src="media/svg/trophy.svg" 
+                                        width="27" height="27"
+                                        class="competitions-trophy"
+                                        alt="trophy"
+                                    >
+                                    <h5>102</h5>
+                                </div>
+                                <p>лучший результат</p>
+                            </div>
+                            <div class="competitions-timer">
+                                Конец через 12 дн. 7ч.
+                            </div>
+                        </div>
+                        <div class="card competitions-card-back">
+                            <img 
+                                src="media/svg/squats-light.svg" 
+                                width="100" height="100"
+                                alt="squats"
+                            >
+                            <a href="#">
+                                <div class="competitions-card-link">
+                                    <h2>Принять участие</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="competitions-nav">
+                <div class="arrow arrow-left arrow-disabled">
+                    <img src="media/svg/arrow.svg" alt="arrow-left">
+                </div>
+                <div class="arrow arrow-right">
+                    <img src="media/svg/arrow.svg" alt="arrow-right">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,701 @@
+/* Шрифты */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/**
+Нормализация блочной модели
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/**
+Убираем внутренние отступы слева тегам списков,
+у которых есть атрибут class
+*/
+:where(ul, ol):where([class]) {
+    padding-left: 0;
+}
+
+/**
+Убираем внешние отступы body и двум другим тегам,
+у которых есть атрибут class
+*/
+body,
+:where(blockquote, figure):where([class]) {
+    margin: 0;
+}
+
+/**
+Убираем внешние отступы вертикали нужным тегам,
+у которых есть атрибут class
+*/
+:where(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    dl
+) {
+    margin-block: 0;
+}
+
+:where(dd[class]) {
+    margin-left: 0;
+}
+
+/**
+Убираем стандартный маркер маркированному списку,
+у которого есть атрибут class
+*/
+:where(ul[class]) {
+    list-style: none;
+}
+
+/**
+Упрощаем работу с изображениями
+*/
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/**
+Наследуем свойства шрифт для полей ввода
+*/
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+html {
+/**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+*/
+    height: 100%;
+/**
+    Плавный скролл
+*/
+    scroll-behavior: smooth;
+}
+
+body {
+/**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+*/
+    min-height: 100%;
+/**
+    Унифицированный интерлиньяж
+*/
+    line-height: 1.5;
+}
+
+/**
+Удаляем все анимации и переходы для людей,
+которые предпочитают их не использовать
+*/
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* Глобальные переменные */
+:root {
+    --color-light: #ffffff;
+    --color-blue: rgba(32, 123, 255, 1);
+
+    --border-radius: 30px;
+    --border: 1px solid var(--color-light-blue);
+
+    --transition: 0.3s ease;
+
+    --plyr-color-main: var(--color-blue);  /* Цвет видео-плеера */
+}
+
+
+/* Глобальные свойства селекторов */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.75;
+    background-color: var(--color-light);
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 0 40px 0 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+a, button, input, textarea, svg * {
+    transition: var(--transition);
+}
+
+a {
+    color: var(--color-blue);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+/* Стили скроллбара */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-blue);
+}
+
+/* Выделение */
+::selection {
+    background: var(--color-blue);
+    color: var(--color-light);
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: var(--color-blue);
+    color: var(--color-light);
+    text-shadow: none;
+}
+
+
+/* Утилитарные классы */
+.title-fw600 {
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.blue-text {
+    color: var(--color-blue);
+}
+
+.display-inline {
+    display: inline-flex;
+    align-items: center;
+}
+
+.display-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vertical-centering {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cards-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--color-blue);
+    border-radius: 55px;
+    height: 370px;
+    margin-top: 100px;
+    gap: 80px;
+}
+
+.card {
+    width: 23.5vw;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    cursor: pointer;
+    background-color: var(--color-light);
+    border-radius: 30px;
+    box-shadow: 0 5px 20px 5px rgba(48, 59, 109, 0.15);
+    transform: translateY(-40px);
+    transition: all 1s ease;
+}
+
+.clients-card, .competitions-card {
+    width: 23.5vw;
+    height: 380px;
+    perspective: 1000px;
+}
+
+.clients-card-inner, .competitions-card-inner {
+    width: 23.5vw;
+    height: 0;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.clients-card-front, .clients-card-back,
+.competitions-card-front, .competitions-card-back {
+    position: absolute;
+    -webkit-backface-visibility: hidden;  /* Safari */
+    backface-visibility: hidden;
+}
+
+
+/* Стили видео-плеера */
+.plyr {
+    border-style: solid;
+    border-color: #1E1E1E;
+    border-radius: 50px;
+    transition: border-radius 1s;
+}
+
+.plyr__control--overlaid {
+    transform: scale(2);
+}
+
+
+/* Шапка */
+.header {
+    position: absolute;
+    z-index: 1;
+    width: 93.75vw;
+    height: 75px;
+    margin: 40px 40px 0;
+    border-radius: 18px;
+    padding: 0 3vw;
+    background: var(--color-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo-block {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    background-color: var(--color-light);
+    border-radius: 17px;
+}
+
+.header-logo-image {
+    object-fit: none;
+    overflow: visible;
+    margin-bottom: 30px;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+
+.header-navbar a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 17px;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+.header-navbar a.active {
+    color: rgba(255, 255, 255, 1);
+}
+
+#header-menu-icon {
+    font-size: 3.6rem;
+    color: var(--color-purple);
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+#header-menu-icon.bx-x {
+    transform: rotate(90deg);
+}
+
+
+/* Секция О проекте */
+.about {
+    display: flex;
+}
+
+.about-description {
+    display: flex;
+    flex-direction: column;
+    margin: 220px 0;
+}
+
+.about-description h3 {
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.about-description h1 {
+    line-height: 44px;
+}
+
+.about-results {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.about-results-item {
+    width: 150px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 5px rgba(48, 59, 109, 0.15);
+}
+
+.about-results-item div {
+    text-align: center;
+}
+
+.about-results-item span,
+.about-results-item p {
+    font-weight: 700;
+    line-height: 0.5;
+}
+
+.about-results-item span {
+    font-size: 24px;
+}
+
+.about-results-item p {
+    font-size: 14px;
+}
+
+.about-text {
+    width: 550px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-top: 50px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.about-text::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 90%;
+    background: var(--color-blue);
+    border-radius: 7px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.about-phones {
+    height: 100vh;
+    margin-left: auto;
+}
+
+/* .about-phone {
+    width: 300px;
+    height: 600px;
+    background: url('media/phone.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-bot {
+    width: 82%;
+    margin-bottom: 5px;
+} */
+
+
+/* Секция Наши клиенты */
+.clients-card-back {
+    transform: rotateY(180deg) translateY(-40px);
+}
+
+.clients-card-front p {
+    font-size: 26px;
+    line-height: 33px;
+}
+
+.clients-card-back p {
+    width: 20vw;
+    font-size: 1.15vw;
+    font-weight: 500;
+    line-height: 1.5vw;
+    text-align: left;
+}
+
+
+/* Секция Технология */
+.technology {
+    position: relative;
+}
+
+.technology h1 {
+    text-transform: none;
+}
+
+.technology-eyes {
+    position: absolute;
+    top: -90px;
+    right: 100px;
+    z-index: -1;
+}
+
+
+/* Секция Соревнования */
+.competitions {
+    /* padding-right: 0; */
+}
+
+.competitions h1 {
+    margin: 20px 0 0 10px;
+}
+
+.competitions-card-front, .competitions-card-back {
+    transform: translateY(-70px);
+}
+
+.competitions-card-front h3 {
+    font-size: 22px;
+    border-bottom: rgba(0, 0, 0, 0.25) solid 0.7px;
+}
+
+.competitions-card-front h5 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.competitions-card-front p {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.competitions-people {
+    margin-right: 5px;
+}
+
+.competitions-trophy {
+    margin-right: 10px;
+}
+
+.competitions-timer {
+    width: 175px;
+    height: 25px;
+    background-color: rgba(93, 135, 181, 1);
+    color: var(--color-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    border-radius: 12px;
+}
+
+.competitions-card-back {
+    background-color: rgba(95, 172, 101, 1);
+    transform: rotateY(180deg) translateY(-70px);
+    gap: 0px;
+    cursor: default;
+}
+
+.competitions-card-link {
+    display: flex;
+    align-items: center;
+    width: 20vw;
+    height: 120px;
+    background-color: var(--color-light);
+    color: rgba(95, 172, 101, 1);
+    border-radius: 30px;
+}
+
+.competitions-card-link h2 {
+    line-height: 40px;
+}
+
+.competitions-nav {
+    display: inline-flex;
+    gap: 15px;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.arrow {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: rgba(90, 90, 90, 1);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.arrow-right img {
+    transform: rotate(180deg);
+}
+
+.arrow-disabled {
+    background-color: rgba(90, 90, 90, 0.6);
+    cursor: not-allowed;
+}
+
+@keyframes show-with-right {
+    0% {
+        transform: translateX(0vw);
+    }
+    25% {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes show-with-left {
+    0% {
+        transform: translateX(0vw);
+    }
+    25% {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* Hover эффекты */
+@media(hover: hover) {
+    a:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .card:hover {
+        box-shadow: 0 5px 20px 5px rgba(139, 202, 255, 1);
+    }
+
+    .competitions-card-back:hover {
+        box-shadow: 0 5px 20px 5px rgba(95, 172, 101, 1);
+    }
+}
+
+
+/* Адаптивка */
+@media(max-width: 1200px) {
+    .header-navbar a {
+        font-size: 12px;
+    }
+
+    .cards-block {
+        gap: 50px;
+    }
+}
+
+
+@media(max-width: 980px) {
+    .header-navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3%;
+        background: rgba(32, 123, 255, 0.9);
+        border-bottom-left-radius: 2rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+    }
+
+    .header-navbar.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .header-navbar a {
+        display: block;
+        font-size: 17px;
+        margin: 3rem 0;
+    }
+
+    #header-menu-icon {
+        display: block;
+        color: var(--color-light);
+    }
+
+    .cards-block {
+        height: 300px;
+    }
+
+    .card {
+        height: 310px;
+    }
+
+    .clients-card-front p {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .clients-card-back p {
+        font-size: 12px;
+    }
+}
+
+
+@media(max-width: 800px) {
+    .cards-block {
+        flex-direction: column;
+        align-items: center;
+        /* width: 70vw; */
+        height: auto;
+        margin-top: 50px;
+        padding: 50px 0 50px 0;
+    }
+
+    .card, .clients-card, .competitions-card {
+        width: 500px;
+        height: 630px;
+        transform: translateY(0);
+    }
+
+    .clients-card-back, .competitions-card-back {
+        transform: rotateY(180deg);
+    }
+
+    .clients-card-inner, .competitions-card-inner {
+        width: 500px;
+    }
+}
