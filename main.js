@@ -46,9 +46,43 @@ for(let client of clients) {
 }
 
 
-// Видео-плеер plyr
-const player = new Plyr('#plyr', {captions: {active: true}});
+// видеоплеер plyr
+const player = new Plyr('#plyr', {
+    controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions'],
+    captions: {active: true},
+    muted: true,  
+    autoplay: true 
+});
 window.player = player;
+
+// Отслеживание видимости видео
+function handleVideoPlayback(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Если видео в зоне видимости
+            player.muted = false;  
+            player.volume = 0.25;  
+            if (player.paused) {
+                player.play();  
+            }
+        } else {
+            // Если видео ушло из зоны видимости
+            player.pause();  
+        }
+    });
+}
+
+// Настройка IntersectionObserver
+const observerOptions = {
+    root: null,  
+    threshold: 0.5 
+};
+
+// Отслеживание секции с видео
+const videoSection = document.querySelector('#technology');  // Блок с видео
+const observer = new IntersectionObserver(handleVideoPlayback, observerOptions);
+observer.observe(videoSection); 
+
 
 
 // Пагинация соревнований
