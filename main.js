@@ -178,3 +178,4 @@ for(let comp of competitions) {
         }
     }
 }
+
