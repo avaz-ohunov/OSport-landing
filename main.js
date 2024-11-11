@@ -179,3 +179,24 @@ for(let comp of competitions) {
     }
 }
 
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const icon = question.querySelector('.icon');
+
+    question.addEventListener('click', () => {
+        // Переключаем класс "active"
+        item.classList.toggle('active');
+
+        // Меняем SVG
+        if (item.classList.contains('active')) {
+            icon.src = "media/svg/krestik.svg"; // Меняем на крестик
+            icon.classList.add('krestik'); // Добавляем класс для поворота
+        } else {
+            icon.src = "media/svg/plus.svg"; // Меняем на плюс
+            icon.classList.remove('krestik'); // Убираем поворот
+        }
+    });
+});
+
