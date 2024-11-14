@@ -699,3 +699,257 @@ a {
         width: 500px;
     }
 }
+.faq {
+    margin: 30px auto;
+    padding: 0 20px;
+    max-width: 1000px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.faq-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px; /* Уменьшено расстояние до первой линии */
+    color: black;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.faq-highlight {
+    color: rgba(32, 123, 255, 1); /* Голубой цвет */
+}
+
+.faq-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item:last-child {
+    border-bottom: 1px solid #e0e0e0; /* Линия после последнего вопроса */
+}
+
+.faq-question {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: black;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.faq-question .icon {
+    width: 25px; /* Размер иконки (плюс и крестик) */
+    height: 25px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease; /* Плавная смена */
+}
+
+.faq-question .icon.krestik {
+    transform: scale(1.5) rotate(90deg); /* Только поворот для крестика */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Плавный поворот */
+}
+
+.faq-answer-wrapper {
+    overflow: hidden; /* Скрытие содержимого */
+    max-height: 0; /* Изначально скрыто */
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Плавная анимация раскрытия */
+}
+
+.faq-answer {
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    padding: 10px 0; /* Отступ внутри ответа */
+    line-height: 1.5;
+}
+
+.faq-item.active .faq-answer-wrapper {
+    max-height: 300px; /* Высота развёрнутого состояния */
+}
+
+/* Основной стиль футера */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    padding: 15px 40px;
+    background-color: var(--color-light);
+    border: 2px solid rgba(32, 123, 255, 1);
+    border-radius: 15px;
+    color: black;
+    font-size: 14px;
+    line-height: 1.6;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    margin: 50px auto; /* Центрируем футер и добавляем вертикальные отступы */
+    padding: 20px 40px; /* Внутренние отступы */
+    width: calc(100% - 80px); /* Уменьшаем ширину для боковых отступов */
+
+    box-sizing: border-box; /* Учет padding и border внутри ширины */
+}
+
+
+
+/* Логотип и текст "Все права защищены" */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выровнять текст и логотип по левому краю */
+    gap: 3px; /* Минимальное расстояние между строками */
+}
+
+.footer p:first-child {
+    margin-bottom: 0; /* Убираем лишний отступ после текста */
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center; /* Логотип и текст на одной линии */
+    gap: 5px; /* Минимальное расстояние между логотипом и текстом "© 2024" */
+    margin-left: -3px; /* Сдвиг логотипа влево */
+    margin-top: -10px; /* Уменьшить расстояние между логотипом и "Все права защищены" */
+}
+
+.footer-logo img {
+    width: 100px; /* Оставить логотип неизменного размера */
+    height: auto;
+}
+
+
+.footer-logo p {
+    color: #303B6D; /* Изменение цвета текста на нужный (#303B6D) */
+    font-size: 14px; /* Размер шрифта */
+    font-weight: 400; /* Менее жирный текст */
+    margin: 0; /* Убираем лишние отступы */
+    line-height: 1.2; /* Плотное расположение текста */
+}
+.footer-logo p.footer-year {
+    color: #303B6D; /* Цвет текста "2024" */
+    font-size: 14px; /* Размер шрифта */
+    font-weight: 400; /* Толщина шрифта */
+    margin: 0; /* Убираем лишние отступы */
+    position: relative; /* Устанавливаем относительное позиционирование */
+    top: 11px; /* Смещаем текст вниз */
+}
+
+
+/* Стили текста */
+.footer p, .footer a {
+    font-size: 15px;
+    font-weight: 400; /* Менее жирный текст */
+    margin: 3px 0; /* Уменьшенные отступы между строками */
+    color: black;
+}
+
+.footer-title {
+    font-size: 16px; /* Размер текста заголовков */
+    font-weight: 700; /* Сделаны жирнее */
+    margin-bottom: 8px; /* Уменьшенный отступ снизу */
+    text-align: center;
+}
+
+/* "ПАРТНЁРСТВО" и "МЫ В СОЦИАЛЬНЫХ СЕТЯХ" */
+.footer-contact {
+    margin-top: 25px; /* Опускаем блок ниже */
+}
+
+.footer-right .footer-title {
+    position: relative;
+    top: 15px; /* Сдвигаем "ПАРТНЁРСТВО" ниже */
+}
+
+.footer-social .footer-title {
+    position: static; /* Сохраняем "МЫ В СОЦИАЛЬНЫХ СЕТЯХ" на прежней высоте */
+}
+
+/* Контакты */
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    font-size: 15px;
+    margin: 3px 0;
+}
+
+.footer-contact img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Социальные сети */
+.footer-social {
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Центрируем иконки */
+    gap: 48px; /* Увеличено расстояние между иконками */
+    margin: 8px 0; /* Уменьшено расстояние между заголовком и иконками */
+}
+
+.social-icons img {
+    width: 40px; /* Размер иконок */
+    height: 40px;
+    cursor: pointer;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Пользовательское соглашение */
+.user-agreement {
+    display: inline-block;
+    font-size: 12px !important; /* Немного уменьшенный размер */
+    font-weight: 400; /* Средняя жирность */
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+    margin-top: 5px; /* Уменьшенный отступ сверху */
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Центрируем текст */
+}
+
+.user-agreement:hover {
+    border-bottom: 1px solid black;
+    color: black;
+    
+}
+
+
+
+
+
+/* Адаптивность футера */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin-bottom: 10px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+.footer-spacing {
+    height: 25px; /* Высота белого пространства под футером */
+    background-color: white; /* Белый цвет для пространства */
+}
