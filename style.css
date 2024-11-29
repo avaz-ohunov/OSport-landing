@@ -466,6 +466,8 @@ a {
 /* Секция Соревнования */
 .competitions {
     /* padding-right: 0; */
+    margin-top: 0 !important; /* Убираем лишний отступ сверху */
+    padding-top: 0; /* Если есть внутренний отступ, тоже убираем */
 }
 
 .competitions h1 {
@@ -699,11 +701,106 @@ a {
         width: 500px;
     }
 }
+/* Контейнер для секции */
+.partners {
+    margin: 0; /* Убираем отступы снаружи */
+    padding: 0; /* Убираем внутренние отступы */
+    text-align: left;
+    margin-bottom: -40px;
+    position: relative;
+    bottom: -100px;
+}
+
+/* Контейнер для надписи */
+.partners-container {
+    padding-left: 90px; /* Отступ слева как у "Вопросы и Ответы" */
+    margin-bottom: 20px; /* Расстояние между заголовком и логотипами */
+}
+
+/* Стили надписи "Наши партнёры" */
+.partners-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-blue);
+}
+
+/* Карусель с логотипами */
+.partners-carousel {
+    width: 100vw; /* Занимаем всю ширину экрана */
+    overflow: hidden; /* Убираем лишние элементы за пределами */
+    margin: 0 auto; /* Центрируем карусель */
+    padding: 0; /* Убираем внутренние отступы */
+}
+/* Линии с логотипами */
+.carousel-line {
+    display: flex;
+    gap: 60px; /* Расстояние между логотипами */
+    white-space: nowrap;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    width: max-content; /* Ширина строки зависит от контента */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+.carousel-line.line-1 {
+    animation: scroll-right 20s linear infinite; /* Верхняя строка движется вправо */
+}
+
+.carousel-line.line-2 {
+    animation: scroll-left 20s linear infinite; /* Нижняя строка движется влево */
+    margin-top: 30px; /* Расстояние между строками */
+}
+
+/* Логотипы */
+.carousel-line img {
+    height: 60px; /* Размер логотипов */
+    object-fit: contain;
+}
+
+/* Увеличенный размер для лого */
+.carousel-line img.logo-large {
+    height: 100px !important; /* Увеличиваем высоту логотипа и используем !important для переопределения конфликтующих стилей */
+    width: auto !important; /* Сохраняем пропорции */
+    flex-shrink: 0; /* Отключаем уменьшение логотипа в строке */
+    display: inline-block; /* Убедимся, что логотип ведет себя как блочный элемент */
+    vertical-align: middle; /* Выравниваем по центру относительно других логотипов */
+    margin-top: -20px; /* Корректируем положение вверх, если нужно */
+}
+
+/* Поднять логотип Rosbank */
+.carousel-line img.logo-rosbank {
+    margin-top: -5px; /* Поднимаем логотип выше */
+    vertical-align: middle; /* Выравниваем по центру, если нужно */
+    display: inline-block; /* Убедимся, что элемент ведет себя как блочный */
+}
+
+/* Анимации */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Прокрутка половины строки влево */
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%); /* Начинаем с середины строки */
+    }
+    100% {
+        transform: translateX(0); /* Прокручиваем половину строки вправо */
+    }
+}
+
 .faq {
-    margin: 30px auto;
+    margin: 0px auto;
     padding: 0 20px;
     max-width: 1000px;
     font-family: 'Montserrat', sans-serif;
+    position: relative;
+    top: -50px;
 }
 
 .faq-title {
