@@ -179,6 +179,7 @@ for(let comp of competitions) {
     }
 }
 
+
 const faqItems = document.querySelectorAll('.faq-item');
 
 faqItems.forEach(item => {
@@ -200,3 +201,75 @@ faqItems.forEach(item => {
     });
 });
 
+// Функция плавной смены изображения
+function changeArrowImageSmoothly(arrow, newSrc) {
+    const tempImg = new Image();
+    tempImg.src = newSrc;
+
+    tempImg.onload = () => {
+        arrow.src = newSrc;
+    };
+}
+
+// Универсальная функция наблюдателя
+function createObserver(targetSelector, textSelector, arrowSelector, buttonSelector, srcBlack, srcBlue) {
+    const target = document.querySelector(targetSelector);
+    const text = document.querySelector(textSelector);
+    const arrows = document.querySelectorAll(arrowSelector);
+    const button = document.querySelector(buttonSelector);
+
+    const options = {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px',  // Центр экрана
+        threshold: 0
+    };
+
+    const callback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                activateSection(target, text, arrows, button, srcBlack);
+            } else {
+                deactivateSection(target, text, arrows, button, srcBlue);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(target);
+}
+
+// Активация секции
+function activateSection(section, text, arrows, button, srcBlack) {
+    section.style.backgroundColor = 'var(--color-blue)';
+    text.style.color = 'white';
+
+    arrows.forEach(arrow => {
+        changeArrowImageSmoothly(arrow, srcBlack);
+    });
+
+    button.style.backgroundImage = `url("media/svg/black-rectangle.svg")`;
+}
+
+// Деактивация секции
+function deactivateSection(section, text, arrows, button, srcBlue) {
+    section.style.backgroundColor = 'white';
+    text.style.color = 'black';
+
+    arrows.forEach(arrow => {
+        changeArrowImageSmoothly(arrow, srcBlue);
+    });
+
+    button.style.backgroundImage = `url("media/svg/green-rectangle.svg")`;
+}
+
+// Запуск всех наблюдателей при загрузке страницы
+window.addEventListener('load', () => {
+    createObserver('.blue-rectangle', '.tg-bot-text', '.arrow-img', '.green-button', 
+        'media/svg/right-arrow-black.svg', 'media/svg/right-arrow-blue.svg');
+
+    createObserver('.blue-rectangle-left', '.mobile-app-text', '.arrow-img-left', '.green-button-left', 
+        'media/svg/right-arrow-black.svg', 'media/svg/right-arrow-blue.svg');
+
+    createObserver('.blue-rectangle-below-laptop', '.digital-judging-text', '.arrow-img-below-laptop', 
+        '.green-button-below-laptop', 'media/svg/right-arrow-black.svg', 'media/svg/right-arrow-blue.svg');
+});
