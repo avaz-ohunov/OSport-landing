@@ -765,6 +765,199 @@ html, body {
     right: 0; 
 }
 
+/* Стили для нового блока */
+.custom-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -85px 15px;
+    padding: 20px;
+}
+
+.custom-block-text {
+    font-size: 2.8vw;
+    text-align: left;
+    line-height: 1.5;
+    margin-left: 50px;
+}
+
+.line-with-image {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.line-with-image img:first-child {
+    width: 400px; /* Увеличенный размер круга */
+    height:auto;
+    position: absolute;
+    top: 45%; /* Центрирование круга по вертикали относительно текста */
+    left: -25px; /* Легкий сдвиг круга влево */
+    transform: translateY(-50%); /* Центрируем круг по вертикали */
+    z-index: 1; /* Чтобы круг находился за текстом */
+
+}
+
+.line-with-image .highlighted-text {
+    position: relative;
+    margin-left: 0; /* Убираем отступы */
+    z-index: 0; /* Текст над кругом */
+    margin-left: -10px;
+    margin-bottom: -5px;
+}
+
+
+.highlighted-text {
+    color: var(--color-blue);
+    font-weight: bold;
+    z-index: 1;
+    padding: 10px;
+    margin-left: 90px;
+}
+
+.line-with-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выравниваем элементы по левому краю */
+    gap: 10px; /* Пространство между "ИЛИ" и "СОЗДАЙ СВОЁ" */
+    margin-top: -50px; /* Единый отступ сверху */
+}
+
+.custom-block-text span {
+    display: block; /* Делаем span блочным, чтобы отступы применялись корректно */
+    margin-bottom: 20px; /* Единый отступ снизу */
+}
+
+
+.create-own-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование линии под "СОЗДАЙ СВОЁ" */
+}
+
+.create-own-text {
+    position: relative;
+    top: -93px; /* Поднимаем только текст "СОЗДАЙ СВОЁ" */
+    margin-bottom: 5px; /* Добавляем небольшой отступ снизу, чтобы сохранить баланс */
+}
+
+.create-own-wrapper .highlighted-text {
+    text-align: left; /* Текст "СОЗДАЙ СВОЁ" выравнен влево */
+}
+
+.line-with-text img {
+    width: 220px; /* Увеличиваем ширину линии */
+    height: 10px; /* Увеличиваем высоту линии */
+    margin-top: 5px;
+}
+
+.line-container {
+    position: relative; /* Создаем систему координат для абсолютного позиционирования */
+    height: 40px; /* Задаем фиксированное место для линии */
+    margin-top: 10px; /* Расстояние между текстом и линией */
+}
+
+.green-line {
+    position: absolute; /* Изолируем линию от других элементов */
+    top: -245px; /* Линия будет начинаться сверху контейнера */
+    left: 70px; /* Ставим линию по левому краю */
+    width: 60%; /* Растягиваем линию на всю ширину */
+    height: auto; /* Можно изменять высоту без смещения других элементов */
+}
+
+
+.custom-block-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-right: 50px;
+    margin-bottom: 160px;
+}
+
+.button-wrapper {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.button-wrapper img {
+    display: block;
+    width: 100%;
+}
+
+.button-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.6vw; /* Умеренно увеличенный шрифт */
+    color: white;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+.badge {
+    position: absolute;
+    bottom: 5px; /* Расположение от нижнего края */
+    right: -160px; /* Расположение от правого края */
+    width: 70px; /* Установить фиксированную ширину */
+    height: 70px; /* Установить фиксированную высоту */
+    z-index: 2; /* Поверх кнопки */
+}
+
+.custom-block-text span:not(.highlighted-text) {
+    font-weight: bold;
+}
+
+.badge-blue {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 70px; /* Ширина изображения */
+    height: 70px; /* Высота изображения */
+    z-index: 2; /* Поверх кнопки */
+}
+
+.badge-blue::after {
+    content: "FREE";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-13deg); /* Наклон текста */
+    color: rgb(255, 255, 255);
+    font-size: 15px; /* Размер текста */
+    font-weight: bold;
+    text-align: center;
+    z-index: 3; /* Поверх кнопки */
+}
+
+.badge-yellow {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 80px !important; /* Увеличенная ширина */
+    height: 80px !important; /* Увеличенная высота */
+    z-index: 2; /* Поверх кнопки */
+}
+
+.button-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    display: inline-block; /* Делаем ссылки блочными для нормального отображения */
+}
+
+.button-link .button-wrapper {
+    cursor: pointer; /* Делаем указатель в виде руки */
+}
+
+#nashi-razrabotki {
+    margin-top: -185px; /* Сдвигаем блок ближе к верхнему */
+}
 /* Текст "НАШИ РАЗРАБОТКИ" */
 .nashi-razrabotki-text {
     font-size: 3vw;  
